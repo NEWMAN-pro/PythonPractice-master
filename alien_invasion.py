@@ -16,7 +16,6 @@ def run_game():
     # 创建ship stat 的实例
     stats=GameStats(ai_settings)
 
-
     screen=pygame.display.set_mode((ai_settings.screen_width,ai_settings.screen_height))
     # 3.设置游戏标题
     pygame.display.set_caption('Alien Invasion')
