@@ -25,6 +25,7 @@ def run_game():
 
     # 实例外星人
     alien=Alien(ai_settings,screen)
+
     # 创建一个编组存储子弹
     bullets=Group()
     # 创建一个编组存储外星人
