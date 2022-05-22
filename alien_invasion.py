@@ -22,6 +22,7 @@ def run_game():
 
     # 创建一艘飞船
     ship=Ship(ai_settings,screen)
+
     # 实例外星人
     alien=Alien(ai_settings,screen)
     # 创建一个编组存储子弹
