@@ -18,7 +18,7 @@ class Settings():
 
         # 外星人设置
         self.alien_speed_factor=1
-        self.fleet_drop_speed=10
+        self.fleet_drop_speed=1
         # 1 表示向右 -1 表示想做
         self.fleet_direction=1
         # 添加游戏节奏的比例
@@ -33,7 +33,7 @@ class Settings():
         self.alien_speed_factor=1
         self.fleet_direction=1
         # 计分
-        self.alien_points=50
+        self.alien_points=100
     def increas_speed(self):
         """提高速度设置"""
         self.ship_speed_factor*=self.speedup_scale
