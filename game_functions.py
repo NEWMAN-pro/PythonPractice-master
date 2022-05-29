@@ -1,3 +1,4 @@
+import random
 import sys
 import pygame
 from ship import Ship
@@ -137,7 +138,7 @@ def create_fleet(ai_settings,screen,aliens,ship):
     """绘制需要的外星人"""
     alien=Alien(ai_settings,screen)
     alien_width=alien.rect.width
-    alien_height=alien.rect.height
+    alien_height=alien.rect.height + 10
     number_alien_x=get_number_aliens_x(ai_settings,alien_width)
     number_rows=get_number_aliens_y(ai_settings,alien_height,ship)
     for number_row in range(number_rows):
@@ -161,6 +162,10 @@ def update_screen(ai_settings,screen,ship,bullets,aliens,play_button,stats,score
     """更新屏幕上的图像，并切换新的屏幕"""
 
     screen.fill(ai_settings.bg_color)
+    for i in range(1, 50):
+        x = random.randint(1, 1900)
+        y = random.randint(1, 1000)
+        pygame.draw.circle(screen, (255, 255, 0), [x, y], 2)
     for bullet in bullets.sprites():
         bullet.draw_bullet()
     ship.blitme()

@@ -10,7 +10,7 @@ class Scoreboard():
         self.stats=stats
 
         # 显示得分信息时使用的字体设置
-        self.text_color=(30,30,30)
+        self.text_color=(255,255,255)
         self.font=pygame.font.SysFont(None,48)
 
         # 准备初始化得分图像
