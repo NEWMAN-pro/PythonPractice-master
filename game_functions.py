@@ -58,8 +58,7 @@ def check_keyup_event(event,ship):
             elif event.key==pygame.K_LEFT:
                 ship.moving_left=False
 
-def update_bullets(ai_settings,screen,bullets,aliens,ship,scoreboard
-,stats):
+def update_bullets(ai_settings,screen,bullets,aliens,ship,scoreboard,stats):
     for bullet in bullets.copy():
         if bullet.rect.top<=0:
             bullets.remove(bullet)
@@ -94,6 +93,9 @@ def check_aliens_bottom(ai_settings,screen,ship,stats,aliens,bullets,scoreboard)
 def check_high_score(stats,scoreboard):
     if stats.high_score<=stats.score:
         stats.high_score=stats.score
+        exfile = open("max_score", mode="w")
+        exfile.write(str(stats.high_score))
+        exfile.close()
         scoreboard.prep_high_score()
 def ship_hit(ai_settings,screen,ship,stats,aliens,bullets,scoreboard):
     # 生命减1

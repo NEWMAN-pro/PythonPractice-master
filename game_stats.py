@@ -7,7 +7,9 @@ class GameStats():
         self.reset_stats()
         self.game_active=False
         # 在任何情况下都不应该重置最高分
-        self.high_score=0
+        exfile = open("max_score", mode="r")
+        self.high_score = int(exfile.read())
+        exfile.close()
 
     def reset_stats(self):
         self.ship_left=self.ai_settings.ship_limit

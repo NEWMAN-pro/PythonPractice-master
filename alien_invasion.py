@@ -43,8 +43,7 @@ def run_game():
         if stats.game_active:
             ship.update()
             bullets.update()
-            gf.update_bullets(ai_settings,screen,bullets,aliens,ship,scoreboard
-            ,stats)
+            gf.update_bullets(ai_settings,screen,bullets,aliens,ship,scoreboard,stats)
             gf.update_aliens(ai_settings,screen,ship,stats,aliens,bullets,scoreboard)
         else:
             pygame.mouse.set_visible(True)
