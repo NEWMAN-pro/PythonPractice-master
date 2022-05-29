@@ -67,11 +67,13 @@ def update_bullets(ai_settings,screen,bullets,aliens,ship,scoreboard,stats):
 
 def check_bullets_aliens_collisions(ai_settings,screen,bullets,aliens,ship,scoreboard,stats):
     collisions=pygame.sprite.groupcollide(bullets,aliens,True,True)
+    if(stats.score-stats.last_score >= 3000):
+        stats.level+=1
+        stats.last_score=stats.score
+        scoreboard.prep_level()
     if len(aliens)==0:
         bullets.empty()
         ai_settings.increas_speed()
-        stats.level+=1
-        scoreboard.prep_level()
         create_fleet(ai_settings,screen,aliens,ship)
     if collisions:
         for aliens in collisions.values():
