@@ -3,8 +3,8 @@ class Settings():
     def __init__(self):
         """初始化屏幕的设置"""
         # 屏幕的设置
-        self.screen_width=1200
-        self.screen_height=700
+        self.screen_width=1900
+        self.screen_height=1000
         self.bg_color=(230,230,230)
         # 飞船设置
         self.ship_speed_factor=3
