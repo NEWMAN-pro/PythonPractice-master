@@ -16,3 +16,4 @@ class GameStats():
         self.score=0
         self.last_score=0
         self.level=1
+        self.checkpoint=1

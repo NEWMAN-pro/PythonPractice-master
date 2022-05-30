@@ -44,6 +44,7 @@ def start_game(ai_settings,screen,stats,aliens,bullets,ship,scoreboard):
     stats.reset_stats()
     scoreboard.prep_score()
     scoreboard.prep_level()
+    scoreboard.prep_checkpoint()
     stats.game_active=True
 
     # 清空外星人和子弹
@@ -74,6 +75,8 @@ def check_bullets_aliens_collisions(ai_settings,screen,bullets,aliens,ship,score
     if len(aliens)==0:
         bullets.empty()
         ai_settings.increas_speed()
+        stats.checkpoint+=1
+        scoreboard.prep_checkpoint()
         create_fleet(ai_settings,screen,aliens,ship)
     if collisions:
         for aliens in collisions.values():

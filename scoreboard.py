@@ -18,6 +18,7 @@ class Scoreboard():
         self.prep_high_score()
         self.prep_level()
         self.prep_ships()
+        self.prep_checkpoint()
     def prep_score(self):
         """将得分转化为一幅渲染的图像"""
         score_str=str(self.stats.score)
@@ -45,11 +46,18 @@ class Scoreboard():
         self.level_rect=self.level_image.get_rect()
         self.level_rect.right=self.screen_rect.right-20
         self.level_rect.top=self.score_rect.bottom+10
+    def prep_checkpoint(self):
+        self.checkpoint_image=self.font.render(str(self.stats.checkpoint),True,self.text_color,self.ai_settings.bg_color)
+
+        self.checkpoint_rect=self.checkpoint_image.get_rect()
+        self.checkpoint_rect.right=self.screen_rect.right-20
+        self.checkpoint_rect.top=self.score_rect.bottom+60
     def show_score(self):
         """在屏幕上显示得分"""
         self.screen.blit(self.score_image,self.score_rect)
         self.screen.blit(self.high_score_image,self.high_score_rect)
         self.screen.blit(self.level_image,self.level_rect)
+        self.screen.blit(self.checkpoint_image,self.checkpoint_rect)
         self.ships.draw(self.screen)
     def prep_ships(self):
         self.ships=Group()
