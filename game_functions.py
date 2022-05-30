@@ -117,8 +117,6 @@ def ship_hit(ai_settings,screen,ship,stats,aliens,bullets,scoreboard):
     bullets.empty()
 
     create_fleet(ai_settings,screen,aliens,ship)
-    # 创建新的外星人和飞船顺序错了
-    #create_fleet(ai_settings,screen,ship,aliens)
     ship.center_ship()
     # 暂停0.5
     sleep(0.5)
